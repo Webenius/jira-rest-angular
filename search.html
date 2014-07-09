@@ -1,29 +1,29 @@
 <div class="well">
-          <form class="form">
+    <form role="form">
                 <div>
-                    <div class="input-append">
+                    <div class="form-group">
                         <label>Project</label>
-                        <input type="text" ng-model="project" class="project" placeholder="Project">
+                        <input type="text" ng-model="project" class="form-control" placeholder="Project">
                     </div>
-                    <div class="input-append">
+                    <div class="form-group">
                         <label>Issue-Key</label>
-                        <input type="text" ng-model="key" class="title" placeholder="Issue-Key">
+                        <input type="text" ng-model="key" class="form-control" placeholder="Issue-Key">
                     </div>
-                    <div class="input-append">
+                    <div class="form-group">
                         <label>Description</label>
-                        <input type="text" ng-model="description" class="description" placeholder="Description">
+                        <input type="text" ng-model="description" class="form-control" placeholder="Description">
                     </div>
                     <div>
-                      <button ng-click="createIssue()" class="btn">Search</button><!-- addComment() -->
+                      <button type="submit" ng-click="createIssue()" class="btn btn-default">Search</button><!-- addComment() -->
                     </div>
                 </div>
-            </form>
-        </div>
+    </form>
+    </div>
 <div class="well" ng-show="jiraData.currentIssue == null">
             <form class="form-search pull-right">
                 <div class="input-append">
                     <input type="text" ng-model="filterText" class="span2 search-query" placeholder="Issues Filter">
-                    <button ng-click="filterText = null" class="btn">Filter</button>
+                    <button type="button" ng-click="filterText = null" class="btn btn-default">Filter</button>
                 </div>
             </form>
             <label>Issue State</label>
