@@ -1,0 +1,21 @@
+<div class="well">
+          <!-- Start Login -->
+          <form name="loginForm" ng-submit="login(credentials)" novalidate>
+              <div class="input-append">
+                <label for="jiraServer">Jira Server:</label>
+                <input type="text" id="jiraServer" ng-model="jiraServer">
+              </div>
+              <div class="input-append">
+                <label for="username">Username:</label>
+                <input type="text" id="username" ng-model="credentials.username">
+              </div>
+              <div class="input-append">
+                <label for="password">Password:</label>
+                <input type="password" id="password" ng-model="credentials.password">
+              </div>
+              <div>
+                <button type="submit">Login</button>
+              </div>
+          </form>
+          <!-- End Login -->
+        </div>
