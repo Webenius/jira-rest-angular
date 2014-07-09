@@ -246,7 +246,6 @@ module.controller('ApplicationController', ['$scope', '$http', 'Base64', 'JiraIs
             }
         );
     };
-	console.log("----nb issues: " + $scope.jiraIssues.length);
 
     $scope.jiraIssues = [
                             {
