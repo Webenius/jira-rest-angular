@@ -7,39 +7,33 @@
   <script type="text/javascript" src="angular.min.js"></script>
   <script type="text/javascript" src="angular-resource.js"></script>
   <script type="text/javascript" src="angular-route.js"></script>
-  <script type="text/javascript" src="angular-module.js"></script>
+  <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
     <div class="container" ng-app="JiraRESTClientApp">
       <div ng-controller="ApplicationController">
-      <h1 class="lead">Jira REST Client with AngularJS</h1>
-		<div class="header">
+        <div class="header">
+			<div class="pull-left"><a href="http://www.sam-bi.com" target="_blanck"><img alt="sam-bi.com" src="./images/logo.png"></a></div>
 			<ul class="nav nav-pills pull-right">
-				<li><a href="login">Login</a></li>
-				<li><a href="search">Search</a></li>
-				<li><a href="create">Create</a></li>
+				<li><a href="#/login">Login</a></li>
+				<li><a href="#/search">Search</a></li>
+				<li><a href="#/create">Create</a></li>
 			</ul>
-        <h3 class="text-muted">AngularJS</h3>
+			<h3 class="lead">Jira REST Client with AngularJS</h3>
 		</div>
+		<!--div class="header">
+			<ul class="nav nav-pills pull-right">
+				<li><a href="/login">Login</a></li>
+				<li><a href="/search">Search</a></li>
+				<li><a href="/create">Create</a></li>
+			</ul>
+			<h3 class="text-muted">Jira REST Client with AngularJS</h3>
+		</div-->
         <div class="well">
           <!-- Start Login -->
-          <form name="loginForm" ng-submit="login(credentials)" novalidate>
-              <div class="input-append">
-                <label for="jiraServer">Jira Server:</label>
-                <input type="text" id="jiraServer" ng-model="jiraServer">
-              </div>
-              <div class="input-append">
-                <label for="username">Username:</label>
-                <input type="text" id="username" ng-model="credentials.username">
-              </div>
-              <div class="input-append">
-                <label for="password">Password:</label>
-                <input type="password" id="password" ng-model="credentials.password">
-              </div>
-              <div>
-                <button type="submit">Login</button>
-              </div>
-          </form>
+			<div class="row marketing" ng-view>
+				<i class="fa fa-refresh fa-spin fa-4x"></i>
+			</div>
           <!-- End Login -->
         </div>
         <div class="well">
