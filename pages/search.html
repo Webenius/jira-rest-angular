@@ -1,0 +1,65 @@
+<div class="well">
+    <form role="form">
+                <div>
+                    <div class="form-group">
+                        <label>Project</label>
+                        <input type="text" ng-model="project" class="form-control" placeholder="Project">
+                    </div>
+                    <div class="form-group">
+                        <label>Issue-Key</label>
+                        <input type="text" ng-model="key" class="form-control" placeholder="Issue-Key">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" ng-model="description" class="form-control" placeholder="Description">
+                    </div>
+                    <div>
+                      <button type="submit" ng-click="createIssue()" class="btn btn-default">Search</button><!-- addComment() -->
+                    </div>
+                </div>
+    </form>
+    </div>
+	<div class="well" ng-show="jiraData.currentIssue == null">
+        <form class="form-search pull-right">
+            <div class="form-group">
+                <input type="text" ng-model="filterText" placeholder="Issues Filter">
+                <button type="button" ng-click="filterText = null" class="btn btn-default">Filter</button>
+            </div>
+        </form>
+		<!--div>
+            <label>Issue State</label>
+            <select ng-model="jiraData.issueListState" ng-change="getIssues()">
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
+                <option value="inprogres">In progress</option>
+                <option value="resolved">Resolved</option>
+                <option value="reopened">Reopened</option>
+            </select>
+		</div-->
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th class="span1">Key</th>
+                        <th class="span2">Title</th>
+                        <th class="span1">State</th>
+                        <th class="span2 sortable" ng-class="sortClass('created')" ng-click="setSort('created')">Created</th>
+                        <th class="span2 sortable" ng-class="sortClass('updated')" ng-click="setSort('updated')">Updated</th>
+                        <th class="span1">Description</th>
+                        <th class="span2">Reporter</th>
+                        <th class="span2">Assignee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="issue in jiraIssues | filter:filterText">
+                        <td class="text-center"><a ng-click="setCurrentIssue(issue.number)">{{issue.key}}</a></td>
+                        <td>{{issue.fields.summary}}</td>
+                        <td class="text-center" ng-class="issue.state">{{issue.fields.status.name}}</td>
+                        <td class="text-center">{{issue.fields.created | date:'short'}}</td>
+                        <td class="text-center">{{issue.fields.updated | date:'short'}}</td>
+                        <td class="text-center">{{issue.fields.description}}</td>
+                        <td class="text-center">{{issue.fields.reporter.displayName}}</td>
+                        <td class="text-center">{{issue.fields.assignee.displayName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
