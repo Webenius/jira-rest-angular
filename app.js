@@ -89,15 +89,15 @@ module.config(function($routeProvider) {
 			.when('/', {
 				templateUrl: 'login.html'
 			})
-			.when('/login', {
+			.when('/pages/login', {
 				templateUrl: 'login.html',
 				controller: 'ApplicationController'
 			})
-			.when('/search', {
+			.when('/pages/search', {
 				templateUrl: 'search.html',
 				controller: 'ApplicationController'
 			})
-			.when('/create', {
+			.when('/pages/create', {
 				templateUrl: 'create.html',
 				controller: 'ApplicationController'
 			});
