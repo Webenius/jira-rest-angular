@@ -87,18 +87,18 @@ module.factory('Base64', function() {
 module.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'login.html'
+				templateUrl: 'pages/login.html'
 			})
-			.when('/pages/login', {
-				templateUrl: 'login.html',
+			.when('/login', {
+				templateUrl: 'pages/login.html',
 				controller: 'ApplicationController'
 			})
-			.when('/pages/search', {
-				templateUrl: 'search.html',
+			.when('/search', {
+				templateUrl: 'pages/search.html',
 				controller: 'ApplicationController'
 			})
-			.when('/pages/create', {
-				templateUrl: 'create.html',
+			.when('/create', {
+				templateUrl: 'pages/create.html',
 				controller: 'ApplicationController'
 			});
 	});
