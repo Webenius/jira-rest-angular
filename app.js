@@ -86,9 +86,6 @@ module.factory('Base64', function() {
 
 module.config(function($routeProvider) {
 		$routeProvider
-			.when('/', {
-				redirectTo: '/login'
-			})
 			.when('/login', {
 				templateUrl: 'pages/login.html',
 				controller: 'ApplicationController'
