@@ -87,7 +87,7 @@ module.factory('Base64', function() {
 module.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'pages/login.html'
+				redirectTo: '/login'
 			})
 			.when('/login', {
 				templateUrl: 'pages/login.html',
@@ -102,7 +102,7 @@ module.config(function($routeProvider) {
 				controller: 'ApplicationController'
 			})
 			.otherwise({
-        			redirectTo: '/'
+        			redirectTo: '/login'
     			});
 	});
 
