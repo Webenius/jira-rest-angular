@@ -100,7 +100,10 @@ module.config(function($routeProvider) {
 			.when('/create', {
 				templateUrl: 'pages/create.html',
 				controller: 'ApplicationController'
-			});
+			})
+			.otherwise({
+        			redirectTo: '/'
+    			});
 	});
 
 module.factory('JiraIssues', function ($resource) {
